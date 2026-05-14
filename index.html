@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manulife IIAP Practice Exam</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="manulife_logo.svg" alt="Manulife" class="logo-img">
+            </div>
+            <div class="header-title">
+                <h2>IIAP Practice Exam</h2>
+            </div>
+            <button class="dark-mode-toggle" onclick="toggleDarkMode()" aria-label="Toggle dark mode">
+                <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 2V4M12 20V22M22 12H20M4 12H2M19.07 4.93L17.66 6.34M6.34 17.66L4.93 19.07M19.07 19.07L17.66 17.66M6.34 6.34L4.93 4.93" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Screen -->
+            <div id="welcome-screen" class="screen active">
+                <div class="welcome-card">
+                    <div class="welcome-header">
+                        <div class="welcome-icon">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="8" y="12" width="48" height="44" rx="4" fill="#00A758" opacity="0.1"/>
+                                <rect x="8" y="12" width="48" height="8" rx="4" fill="#00A758"/>
+                                <line x1="16" y1="28" x2="48" y2="28" stroke="#00A758" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="16" y1="36" x2="48" y2="36" stroke="#00A758" stroke-width="2" stroke-linecap="round"/>
+                                <line x1="16" y1="44" x2="40" y2="44" stroke="#00A758" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h1>Welcome to IIAP Practice Exam</h1>
+                        <p class="welcome-subtitle">Master your insurance knowledge with our comprehensive practice platform</p>
+                        <p class="welcome-description">
+                            This interactive practice exam is designed to help you prepare for the Manulife IIAP (Insurance Institute Accreditation Program) certification. 
+                            With 120 carefully curated questions across two complete mock exams, you'll gain the confidence and knowledge needed to excel. 
+                            Choose from multiple exam modes, track your progress, and review detailed explanations to strengthen your understanding of insurance principles, 
+                            regulations, and best practices.
+                        </p>
+                    </div>
+                    
+                    <div class="quiz-settings">
+                        <div class="setting-group">
+                            <label for="exam-select">
+                                <svg class="label-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4H16V16H4V4Z" stroke="#00A758" stroke-width="1.5" fill="none"/>
+                                    <path d="M7 2V6M13 2V6" stroke="#00A758" stroke-width="1.5" stroke-linecap="round"/>
+                                    <line x1="4" y1="8" x2="16" y2="8" stroke="#00A758" stroke-width="1.5"/>
+                                </svg>
+                                <strong>Select Exam Mode</strong>
+                            </label>
+                            <select id="exam-select" class="exam-select">
+                                <option value="exam1">Mock Exam 1 (60 questions)</option>
+                                <option value="exam2">Mock Exam 2 (60 questions)</option>
+                                <option value="mixed">Mixed Mode (30 from each exam)</option>
+                                <option value="random">Random Mode (60 random questions)</option>
+                            </select>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="timer-enabled">
+                                <svg class="label-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="10" cy="11" r="7" stroke="#00A758" stroke-width="1.5" fill="none"/>
+                                    <path d="M10 11V7" stroke="#00A758" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M10 11L13 13" stroke="#00A758" stroke-width="1.5" stroke-linecap="round"/>
+                                    <path d="M7 3H13" stroke="#00A758" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                                <span><strong>Show Timer (tracks your time)</strong></span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-info">
+                        <h3>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: inline-block; vertical-align: middle; margin-right: 8px;">
+                                <path d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z" stroke="#00A758" stroke-width="1.5"/>
+                                <path d="M10 10V14" stroke="#00A758" stroke-width="1.5" stroke-linecap="round"/>
+                                <circle cx="10" cy="7" r="0.5" fill="#00A758"/>
+                            </svg>
+                            Instructions
+                        </h3>
+                        <ul>
+                            <li>Choose your preferred exam mode above</li>
+                            <li>Optionally enable a timer for timed practice</li>
+                            <li>All modes contain exactly 60 questions</li>
+                            <li>Navigate back and forth between questions</li>
+                            <li>Review your answers and score at the end</li>
+                            <li>Goodluck!</li>
+                        </ul>
+                    </div>
+                    
+                    <button class="btn btn-primary btn-large" onclick="startQuiz()">
+                        <span>Start Exam</span>
+                        <svg class="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 4L13 10L7 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quiz Screen -->
+            <div id="quiz-screen" class="screen">
+                <!-- Floating Timer -->
+                <div id="timer-display" class="timer-display" style="display: none;"></div>
+                
+                <div class="quiz-card">
+                    <div class="quiz-header">
+                        <div class="quiz-header-top">
+                            <button class="btn btn-back" onclick="backToWelcome()">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 4L7 10L13 16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span>Back</span>
+                            </button>
+                            <h2 class="quiz-title">Answer All Questions</h2>
+                        </div>
+                        <div class="quiz-progress">
+                            <span id="answered-count">0</span> of <span id="total-questions-quiz">60</span> answered
+                        </div>
+                    </div>
+                    
+                    <div id="all-questions-container" class="all-questions-container">
+                        <!-- Questions will be dynamically inserted here -->
+                    </div>
+
+                    <div class="quiz-footer">
+                        <button class="btn btn-primary btn-large" onclick="submitQuiz()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10L8 14L16 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Submit Exam</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Scroll to Top Button -->
+                <button id="scroll-top-btn" class="scroll-top-btn" onclick="scrollToTop()" style="display: none;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="results-screen" class="screen">
+                <div class="results-card">
+                    <div class="results-header">
+                        <div class="results-icon">
+                            <svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="36" cy="36" r="32" fill="#00A758" opacity="0.1"/>
+                                <path d="M22 38L30 46L50 26" stroke="#00A758" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h1>Exam Complete!</h1>
+                    </div>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <div class="score-inner">
+                                <span id="score-percentage" class="score-percentage">0%</span>
+                                <span class="score-label">Score</span>
+                            </div>
+                        </div>
+                        <p class="score-text">You scored <strong><span id="score">0</span> out of <span id="total-score">60</span></strong></p>
+                    </div>
+                    <div class="results-message" id="results-message"></div>
+                    <div class="results-actions">
+                        <button class="btn btn-secondary" onclick="reviewAnswers()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 4H16V16H4V4Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+                                <line x1="7" y1="8" x2="13" y2="8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <line x1="7" y1="12" x2="13" y2="12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                            <span>Review Answers</span>
+                        </button>
+                        <button class="btn btn-primary" onclick="restartQuiz()">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 10C4 6.68629 6.68629 4 10 4C13.3137 4 16 6.68629 16 10C16 13.3137 13.3137 16 10 16C7.79086 16 5.83566 14.8643 4.75 13.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M4 16V13H7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>Retake Exam</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review Screen -->
+            <div id="review-screen" class="screen">
+                <div class="review-card">
+                    <h1>Review Your Answers</h1>
+                    <div id="review-container"></div>
+                    <button class="btn btn-primary" onclick="restartQuiz()">Retake Exam</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Easter Egg Photo Gallery Modal - MEME EXPLOSION! -->
+    <div id="easter-egg-modal" class="easter-egg-modal" onclick="closeEasterEgg()">
+        <div class="easter-egg-content" onclick="event.stopPropagation()">
+            <button class="easter-egg-close" onclick="closeEasterEgg()">&times;</button>
+            <h2 class="easter-egg-title">🎉 YOU FOUND THE SECRET! 🎉</h2>
+            <div class="photo-gallery">
+                <!-- Replace these with your own meme/photo URLs! -->
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400" alt="Team celebration">
+                <img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?w=400" alt="Office fun">
+                <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?w=400" alt="Team meeting">
+                <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=400" alt="Celebration">
+                <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=400" alt="Happy team">
+                <img src="https://images.unsplash.com/photo-1543269865-cbf427effbad?w=400" alt="Success">
+                <img src="https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=400" alt="Team work">
+                <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=400" alt="Office celebration">
+                <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=400" alt="Team high five">
+                <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?w=400" alt="Celebration time">
+                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=400" alt="Group fun">
+                <img src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=400" alt="Party time">
+            </div>
+        </div>
+    </div>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

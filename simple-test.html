@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+    <style>
+        .screen { display: none; }
+        .screen.active { display: block; }
+        body { font-family: Arial; padding: 40px; }
+        .card { background: white; padding: 40px; border: 2px solid #00A758; border-radius: 10px; max-width: 600px; margin: 0 auto; }
+        button { background: #00A758; color: white; padding: 15px 30px; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+    </style>
+</head>
+<body style="background: #f0f0f0;">
+    <div id="welcome" class="screen active">
+        <div class="card">
+            <h1>Welcome Screen Test</h1>
+            <p>If you see this, the welcome screen is working!</p>
+            <button onclick="startTest()">Start Quiz</button>
+        </div>
+    </div>
+    
+    <div id="quiz" class="screen">
+        <div class="card">
+            <h1>Quiz Screen Test</h1>
+            <p>Quiz started successfully!</p>
+            <button onclick="goBack()">Go Back</button>
+        </div>
+    </div>
+    
+    <script>
+        function startTest() {
+            document.getElementById('welcome').classList.remove('active');
+            document.getElementById('quiz').classList.add('active');
+        }
+        
+        function goBack() {
+            document.getElementById('quiz').classList.remove('active');
+            document.getElementById('welcome').classList.add('active');
+        }
+    </script>
+</body>
+</html>

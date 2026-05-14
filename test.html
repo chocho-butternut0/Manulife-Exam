@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test</title>
+</head>
+<body>
+    <h1>Testing Quiz</h1>
+    <button onclick="testQuiz()">Test</button>
+    <div id="output"></div>
+    
+    <script src="questions.js"></script>
+    <script>
+        function testQuiz() {
+            const output = document.getElementById('output');
+            try {
+                output.innerHTML = '<p>MOCK_EXAM_1 exists: ' + (typeof MOCK_EXAM_1 !== 'undefined') + '</p>';
+                output.innerHTML += '<p>MOCK_EXAM_1 length: ' + (MOCK_EXAM_1 ? MOCK_EXAM_1.length : 'undefined') + '</p>';
+                output.innerHTML += '<p>MOCK_EXAM_2 exists: ' + (typeof MOCK_EXAM_2 !== 'undefined') + '</p>';
+                output.innerHTML += '<p>MOCK_EXAM_2 length: ' + (MOCK_EXAM_2 ? MOCK_EXAM_2.length : 'undefined') + '</p>';
+                output.innerHTML += '<p>First question: ' + (MOCK_EXAM_1[0] ? MOCK_EXAM_1[0].q : 'none') + '</p>';
+            } catch(e) {
+                output.innerHTML = '<p style="color:red">Error: ' + e.message + '</p>';
+            }
+        }
+    </script>
+</body>
+</html>
